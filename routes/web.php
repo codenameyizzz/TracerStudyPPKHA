@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\adminNavController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -26,5 +28,8 @@ Route::get('/signin', function () {
     return view('signin');
 });
 
+Route::get('/admin', [adminNavController::class, 'show'])->name('admin');
+
 Route::post('/questionnaire/submit', 'QuestionnaireController@submit')
     ->name('questionnaire.submit');
+
