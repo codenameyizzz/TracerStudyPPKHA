@@ -2,18 +2,15 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Atribut yang dapat diisi.
      *
      * @var array<int, string>
      */
@@ -21,10 +18,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        // 'is_admin' => true, // Jangan tambahkan 'is_admin' di sini jika Anda tidak ingin pengisian massal
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Atribut yang disembunyikan.
      *
      * @var array<int, string>
      */
@@ -34,15 +32,12 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * Tipe data atribut.
      *
-     * @return array<string, string>
+     * @var array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'is_admin' => 'boolean',
+    ];
 }
