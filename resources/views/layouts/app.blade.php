@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>@yield('title') - Tracer Study IT Del</title>
   <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+  <link rel="icon" href="{{asset('image/logo-ts.png')}}" type="image/x-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <!-- Font Awesome untuk ikon -->

@@ -12,7 +12,7 @@
             <a href="{{ url('/questionnaire') }}" class="btn">Mulai Sekarang</a>
         </div>
         <div class="hero-image">
-            <img src="{{ asset('public/image/hero-1.png') }}" alt="Ilustrasi Tracer Study">
+            <img src="{{ asset('image/hero-1.png') }}" alt="Ilustrasi Tracer Study">
         </div>
     </div>
     <div class="scroll-down">
