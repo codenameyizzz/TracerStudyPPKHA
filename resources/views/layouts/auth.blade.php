@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>PABWE - Todo App</title>
+  <title>@yield('title') - Tracer Study IT Del</title>
   <link href="{{ asset('assets/vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" rel="stylesheet" />
 </head>
 
