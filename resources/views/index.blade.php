@@ -20,11 +20,32 @@
     </div>
 </header>
 
+<section class="tracer-study-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-title">
+          Apa itu <span class="highlight">Tracer Study?</span>
+        </h2>
+      </div>
+      <div class="col-md-12 text-content">
+        <p>
+          Tracer Study merupakan salah satu metode yang digunakan oleh beberapa perguruan tinggi, khususnya di Indonesia, untuk memperoleh umpan balik dari alumni. Umpan balik yang diperoleh ini diperlukan oleh perguruan tinggi untuk perbaikan serta pengembangan kualitas dan sistem pendidikan.
+        </p>
+        <p>
+          Umpan balik ini juga bermanfaat untuk memetakan dunia usaha dan industri agar jeda antara kompetensi yang diperoleh alumni saat kuliah dengan tuntutan dunia kerja dapat diperkecil.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- Bagian Manfaat dan Tujuan -->
 <section class="benefits-section">
     <div class="container">
-        <h3>TRACER STUDY</h3>
-        <p>Manfaat dan Tujuan</p>
+        <h3>Manfaat dan Tujuan</h3>
         <div class="content-wrapper">
             <!-- Kolom Teks -->
             <div class="text-content">
