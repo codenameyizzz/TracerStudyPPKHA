@@ -185,6 +185,172 @@ nav .container {
     }
 }
 
+/* Manfaat dan Tujuan */
+/* Container utama */
+.benefits-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: left;
+}
+
+.benefits-section h3 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0d47a1;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Wrapper untuk konten */
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Gambar di sebelah kanan */
+.left-image {
+    flex: 1;
+    max-width: 400px;
+    height: auto;
+}
+
+.left-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Animasi zoom sederhana */
+}
+
+.left-image img:hover {
+    transform: scale(1.05); /* Zoom in saat hover */
+}
+
+/* Kolom teks */
+.text-content {
+    flex: 2;
+}
+
+/* Grid untuk daftar manfaat */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Item manfaat */
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.8s ease; /* Efek animasi masuk */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi hover */
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px); /* Sedikit naik saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Bayangan lebih besar */
+}
+
+/* Ikon manfaat */
+.benefit-item .icon {
+    width: 50px; /* Ukuran ikon */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: #e3f2fd; /* Warna background ikon */
+    border-radius: 50%; /* Bentuk lingkaran */
+}
+
+.benefit-item .icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain; /* Jaga proporsi gambar */
+}
+
+/* Teks manfaat */
+.benefit-item .text h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #0d47a1;
+    font-weight: bold;
+}
+
+.benefit-item .text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Bagian Survey */
+/* Container Utama */
+.survey-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Tambahkan jarak lebih besar */
+    background-color: #002366; /* Warna biru */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Kolom Gambar */
+.survey-section .left-image {
+    flex: 1; /* Proporsi agar ukuran sama dengan teks */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.survey-section .left-image img {
+    width: 100%; /* Gambar memenuhi kolom */
+    max-width: 450px; /* Perbesar ukuran maksimum gambar */
+    max-height: 450px; /* Perbesar tinggi maksimum */
+    border-radius: 10px;
+    object-fit: cover; /* Gambar tetap proporsional */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Kolom Teks */
+.survey-section .text-content {
+    flex: 1; /* Proporsi agar ukuran sama dengan gambar */
+    color: #ffffff;
+    padding-left: 20px; /* Geser teks ke kanan */
+}
+
+.survey-section .text-content h3 {
+    font-size: 32px;
+    color: #fbbf24; /* Warna kuning */
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.survey-section .text-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Kotak Kuning */
+.survey-section .highlight-box {
+    background-color: #fbbf24; /* Warna kuning */
+    padding: 20px;
+    border-radius: 8px;
+    color: #002366;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Bagian Informasi */
 .info-section {
     padding: 60px 0;
@@ -208,7 +374,7 @@ nav .container {
     background-color: #fff;
     padding: 30px 20px;
     border-radius: 10px;
-    border-top: 5px solid var(--accent-color);
+    border-top: 5px solid var(#fbbf24);
     transition: transform 0.3s;
 }
 
