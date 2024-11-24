@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -11,32 +10,34 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     /**
-     * Tampilkan form login.
+     * Show the login form.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
      */
     public function getLogin(Request $request)
     {
         if (Auth::check()) {
-            $user = Auth::user();
-            if ($user->is_admin) {
-                return redirect()->route('dashboard');
-            }
-            return redirect()->route('index');
+            return redirect()->route("home");
         }
-        return view('auth.login');
+        return view("auth.login");
     }
 
     /**
-     * Tangani permintaan login.
+     * Handle login request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function postLogin(Request $request)
     {
-        // Validasi data form login
+        // Validate the login form data
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255|exists:users,email',
             'password' => 'required|string|min:6',
         ]);
 
-        // Validasi custom untuk password
+        // Add custom validation for password
         $validator->after(function ($validator) use ($request) {
             $user = User::where('email', $request->email)->first();
             if (!$user || !Hash::check($request->password, $user->password)) {
@@ -44,7 +45,7 @@ class AuthController extends Controller
             }
         });
 
-        // Jika validasi gagal
+        // If validation fails, redirect back with errors and input
         if ($validator->fails()) {
             return redirect()
                 ->back()
@@ -52,23 +53,16 @@ class AuthController extends Controller
                 ->withInput();
         }
 
-        // Coba login pengguna
+        // Attempt to log the user in
         if (Auth::attempt([
             'email' => $request->email,
             'password' => $request->password
         ], $request->has('remember'))) {
-            // Autentikasi berhasil
-            $user = Auth::user();
-            if ($user->is_admin) {
-                // Arahkan ke halaman admin
-                return redirect()->route('dashboard');
-            }
-
-            // Jika bukan admin, arahkan ke halaman index
-            return redirect()->route('index');
+            // Authentication passed, redirect to intended page
+            return redirect()->route("home");
         }
 
-        // Jika autentikasi gagal
+        // If authentication fails, redirect back with error
         return redirect()
             ->back()
             ->withErrors(['email' => 'These credentials do not match our records.'])
@@ -76,11 +70,14 @@ class AuthController extends Controller
     }
 
     /**
-     * Tangani permintaan logout.
+     * Handle logout request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function getLogout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route("login");
     }
 }
