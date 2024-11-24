@@ -20,6 +20,8 @@
     </div>
 </header>
 
+
+<!-- Bagian Tracer Study -->
 <section class="tracer-study-section">
   <div class="container">
     <div class="row">
@@ -90,6 +92,7 @@
     </div>
 </section>
 
+<!-- Bagian Survei -->
 <section class="survey-section">
     <div class="container">
         <!-- Kolom Gambar -->
@@ -113,7 +116,6 @@
         </div>
     </div>
 </section>
-
 
 
 <!-- Bagian Informasi -->
