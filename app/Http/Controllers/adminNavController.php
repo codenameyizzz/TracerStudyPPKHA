@@ -3,28 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class adminNavController extends Controller
 {
-    /**
-     * Konstruktor untuk melakukan pemeriksaan autentikasi dan otorisasi.
-     */
-    public function __construct()
-    {
-        // Periksa apakah pengguna sudah terautentikasi
-        if (!Auth::check()) {
-            // Jika belum, arahkan ke halaman login
-            return redirect()->route('login')->send();
-        }
-
-        // Periksa apakah pengguna adalah admin
-        if (!Auth::user()->is_admin) {
-            // Jika bukan admin, tampilkan error 403
-            abort(403, 'Unauthorized action.');
-        }
-    }
-
     public function showDashboard()
     {
         return view("admin.app.dashboard");
