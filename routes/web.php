@@ -40,6 +40,8 @@ Route::get('/admin/unduh-data', [adminNavController::class, 'showUnduh'])->name(
 Route::get('/admin/panduan-form', [adminNavController::class, 'showPanduan'])->name('data.panduan');
 Route::get('/admin/faq', [adminNavController::class, 'showFAQ'])->name('data.faq');
 Route::get('/admin/contact', [adminNavController::class, 'showContact'])->name('data.contact');
+Route::get('/admin/user-survey', [adminNavController::class, 'showSurvey'])->name('user.survey');
+
 
 
 // Questionnaire Submission

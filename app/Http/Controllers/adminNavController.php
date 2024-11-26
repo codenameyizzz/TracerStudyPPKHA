@@ -45,4 +45,9 @@ class adminNavController extends Controller
     {
         return view("admin.app.contact");
     }
+
+    public function showSurvey()
+    {
+        return view("admin.app.user_survey");
+    }
 }
