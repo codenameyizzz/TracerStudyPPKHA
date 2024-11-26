@@ -18,10 +18,10 @@
     background: linear-gradient(to right, #0E8AA9, #3CC1E2, #A5BABF);
     height: 100vh;
     display: flex;
-    justify-content: center; /* Memusatkan konten secara horizontal */
-    align-items: center; /* Memusatkan konten secara vertikal */
-    margin: 0; /* Pastikan tidak ada margin pada body */
-    padding: 0 20px; /* Tambahkan padding untuk tampilan responsif */
+    justify-content: center; 
+    align-items: center; 
+    margin: 0; 
+    padding: 0 20px; 
 }
 
 .login-container {
