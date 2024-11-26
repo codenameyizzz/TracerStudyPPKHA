@@ -14,6 +14,10 @@ Route::get('/questionnaire', function () {
     return view('questionnaire');
 });
 
+Route::get('/usersurvey', function () {
+    return view('usersurvey');
+});
+
 Route::get('/report', function () {
     return view('report');
 });
