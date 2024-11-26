@@ -131,8 +131,8 @@ nav .container {
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 1000px;
+    width: 60%;
+    max-width: 400px;
     height: auto;
     display: block;
     margin: 0 auto;
