@@ -38,6 +38,13 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link collapsed" href="{{route('user.survey')}}">
+        <i class="ri-account-pin-circle-line"></i>
+        <span>User Survey</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link collapsed" href="{{route('data.panduan')}}">
         <i class="bi bi-journal-text"></i>
         <span>Panduan Form</span>
