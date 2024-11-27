@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -11,41 +12,40 @@ class AuthController extends Controller
 {
     /**
      * Show the login form.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
      */
     public function getLogin(Request $request)
     {
         if (Auth::check()) {
-            return redirect()->route("home");
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role === 'alumni') {
+                return redirect()->route('home');
+            }
         }
         return view("auth.login");
     }
 
     /**
      * Handle login request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function postLogin(Request $request)
     {
-        // Validate the login form data
+        // Validasi data login
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255|exists:users,email',
             'password' => 'required|string|min:6',
         ]);
 
-        // Add custom validation for password
+        // Validasi tambahan untuk password
         $validator->after(function ($validator) use ($request) {
             $user = User::where('email', $request->email)->first();
             if (!$user || !Hash::check($request->password, $user->password)) {
-                $validator->errors()->add('password', 'Password is incorrect.');
+                $validator->errors()->add('password', 'Password salah.');
             }
         });
 
-        // If validation fails, redirect back with errors and input
+        // Jika validasi gagal, kembali dengan error
         if ($validator->fails()) {
             return redirect()
                 ->back()
@@ -53,31 +53,40 @@ class AuthController extends Controller
                 ->withInput();
         }
 
-        // Attempt to log the user in
-        if (Auth::attempt([
-            'email' => $request->email,
-            'password' => $request->password
-        ], $request->has('remember'))) {
-            // Authentication passed, redirect to intended page
-            return redirect()->route("home");
+        // Mencoba autentikasi
+        if (
+            Auth::attempt([
+                'email' => $request->email,
+                'password' => $request->password
+            ], $request->has('remember'))
+        ) {
+            // Autentikasi berhasil, arahkan sesuai role
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role === 'alumni') {
+                return redirect()->route('home');
+            }
         }
 
-        // If authentication fails, redirect back with error
+        // Jika autentikasi gagal, kembali dengan error
         return redirect()
             ->back()
-            ->withErrors(['email' => 'These credentials do not match our records.'])
+            ->withErrors(['email' => 'Kredensial tidak cocok dengan catatan kami.'])
             ->withInput();
     }
 
     /**
      * Handle logout request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function getLogout(Request $request)
     {
         Auth::logout();
-        return redirect()->route("login");
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // Redirect ke halaman beranda setelah logout
+        return redirect()->route('home');
     }
+
 }

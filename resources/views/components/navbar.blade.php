@@ -10,19 +10,29 @@
             <li><a href="{{ url('/report') }}">Tracer Study Report</a></li>
             <li><a href="{{ url('/#contact') }}">Contact</a></li>
             <li>
-                @auth
-                    <!-- If the user is authenticated, show a logout form or link -->
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link nav-link" style="display: inline; padding: 0; border: none; background: none;">
-                            Keluar
+                @auth   
+                    <!-- If the user is authenticated, show username and logout -->
+                    <div class="dropdown">
+                        <button class="btn btn-link nav-link dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Auth::user()->name }}
                         </button>
-                    </form>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Email: {{ Auth::user()->email }}</a></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Keluar</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 @else
-                    <!-- If the user is not authenticated, show the login link -->
+                    <!-- If the user is not authenticated, show login link -->
                     <a href="{{ route('login') }}" class="sign-in-btn">Masuk</a>
                 @endauth
             </li>
+
         </ul>
     </div>
 </nav>

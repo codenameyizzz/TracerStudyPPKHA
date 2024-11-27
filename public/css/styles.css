@@ -845,3 +845,114 @@ select:focus {
     font-size: 14px;
     color: #333;
 }
+
+/* Untuk NavBar user role status */
+/* Dropdown Menu */
+.nav-links .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links .dropdown .dropdown-toggle {
+    background-color: transparent; /* Menghilangkan background default */
+    border: none;
+    color: var(--text-color); /* Sesuaikan warna teks dengan warna default */
+    font-weight: 600;
+    padding: 8px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px; /* Sudut melengkung sesuai dengan tombol Sign In */
+    transition: color 0.3s, transform 0.3s ease;
+}
+
+.nav-links .dropdown .dropdown-toggle:hover {
+    color: var(--secondary-color); /* Warna saat hover pada nama user */
+    transform: translateY(-2px); /* Efek mengangkat */
+}
+
+/* Border untuk dropdown toggle (Nama Alumni) */
+.nav-links .dropdown .dropdown-toggle {
+    border: 1px solid #e0e0e0; /* Border abu-abu tipis untuk membedakan */
+    border-radius: 30px; /* Sudut melengkung untuk kesan yang lebih halus */
+    padding: 10px 20px;
+}
+
+/* Dropdown Menu */
+.nav-links .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    min-width: 200px;
+    padding: 10px 0;
+    margin: 0;
+    background-color: #fff; /* Background putih */
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    border: 1px solid #e0e0e0; /* Border tipis agar terlihat lebih rapi */
+    display: none; /* Sembunyikan dropdown saat tidak aktif */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Item dalam dropdown */
+.nav-links .dropdown-menu .dropdown-item {
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Menjaga kesejajaran antara nama dan email */
+}
+
+.nav-links .dropdown-menu .dropdown-item:hover {
+    background-color: var(--primary-color); /* Warna saat hover */
+    color: #fff; /* Teks menjadi putih saat hover */
+}
+
+/* Tombol Logout */
+.nav-links .dropdown .dropdown-item button {
+    background-color: transparent; /* Tombol logout transparan */
+    border: none;
+    color: var(--text-color);
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Menjaga kesejajaran antara logout button */
+}
+
+.nav-links .dropdown .dropdown-item button:hover {
+    background-color: var(--primary-color); /* Warna saat hover */
+    color: #fff; /* Teks menjadi putih saat hover */
+}
+
+/* Menyelaraskan Dropdown dengan Elemen Lain */
+.nav-links .dropdown-menu .dropdown-item a {
+    text-decoration: none;
+    color: inherit; /* Tidak ada underline pada link */
+    font-weight: 600;
+}
+
+/* Styling untuk dropdown item yang lebih jelas */
+.nav-links .dropdown-menu .dropdown-item {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.nav-links .dropdown-menu .dropdown-item i {
+    font-size: 1.2em; /* Mengatur ukuran ikon jika ada */
+}
