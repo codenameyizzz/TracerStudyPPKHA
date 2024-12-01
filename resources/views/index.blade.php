@@ -9,7 +9,7 @@
         <div class="hero-content">
             <h2>Selamat Datang di <br> Tracer Study <br> Institut Teknologi Del</h2>
             <p>Bantu kami meningkatkan kualitas pendidikan dengan berpartisipasi dalam tracer study.</p>
-            <a href="{{ url('/questionnaire') }}" class="btn">Mulai Sekarang</a>
+            <a href="{{ url('/questionnaire') }}" class="btn hero-btn">Mulai Sekarang</a>
         </div>
         <div class="hero-image">
             <img src="{{ asset('image/wisuda.jpg') }}" alt="Ilustrasi Tracer Study">
@@ -128,4 +128,5 @@
         <a href="{{ url('/questionnaire') }}" class="btn">Isi Kuisioner</a>
     </div>
 </section>
+
 @endsection

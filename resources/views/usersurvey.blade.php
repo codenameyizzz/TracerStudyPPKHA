@@ -131,41 +131,41 @@
 
         <!-- Segmen 5-->
         <div class="question-card">
-    <h3 onclick="toggleSection('etika-section')" style="cursor: pointer;">
-        Etika <span id="etika-toggle" style="float: right;"></span>
-    </h3>
-    <div id="etika-section" class="animated-section">
-        <div class="form-group">
-            <label>Kepatuhan pada tata nilai yang berlaku</label>
-            <div class="radio-group horizontal">
-                <label><input type="radio" name="kepatuhan" value="Sangat Baik" required> Sangat Baik</label>
-                <label><input type="radio" name="kepatuhan" value="Baik"> Baik</label>
-                <label><input type="radio" name="kepatuhan" value="Cukup"> Cukup</label>
-                <label><input type="radio" name="kepatuhan" value="Kurang"> Kurang</label>
+        <h3 onclick="toggleSection('etika-section')" style="cursor: pointer;">
+            Etika <span id="etika-toggle" style="float: right;"></span>
+        </h3>
+        <div id="etika-section" class="animated-section">
+            <div class="form-group">
+                <label>Kepatuhan pada tata nilai yang berlaku</label>
+                <div class="radio-group horizontal">
+                    <label><input type="radio" name="kepatuhan" value="Sangat Baik" > Sangat Baik</label>
+                    <label><input type="radio" name="kepatuhan" value="Baik"> Baik</label>
+                    <label><input type="radio" name="kepatuhan" value="Cukup"> Cukup</label>
+                    <label><input type="radio" name="kepatuhan" value="Kurang"> Kurang</label>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label>Sikap mematuhi aturan dan norma yang berlaku</label>
-            <div class="radio-group horizontal">
-                <label><input type="radio" name="sikap" value="Sangat Baik" required> Sangat Baik</label>
-                <label><input type="radio" name="sikap" value="Baik"> Baik</label>
-                <label><input type="radio" name="sikap" value="Cukup"> Cukup</label>
-                <label><input type="radio" name="sikap" value="Kurang"> Kurang</label>
+            <div class="form-group">
+                <label>Sikap mematuhi aturan dan norma yang berlaku</label>
+                <div class="radio-group horizontal">
+                    <label><input type="radio" name="sikap" value="Sangat Baik" required> Sangat Baik</label>
+                    <label><input type="radio" name="sikap" value="Baik"> Baik</label>
+                    <label><input type="radio" name="sikap" value="Cukup"> Cukup</label>
+                    <label><input type="radio" name="sikap" value="Kurang"> Kurang</label>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label>Kecerdasan emosional (emotional intelligence)</label>
-            <div class="radio-group horizontal">
-                <label><input type="radio" name="emosional" value="Sangat Baik" required> Sangat Baik</label>
-                <label><input type="radio" name="emosional" value="Baik"> Baik</label>
-                <label><input type="radio" name="emosional" value="Cukup"> Cukup</label>
-                <label><input type="radio" name="emosional" value="Kurang"> Kurang</label>
+            <div class="form-group">
+                <label>Kecerdasan emosional (emotional intelligence)</label>
+                <div class="radio-group horizontal">
+                    <label><input type="radio" name="emosional" value="Sangat Baik" required> Sangat Baik</label>
+                    <label><input type="radio" name="emosional" value="Baik"> Baik</label>
+                    <label><input type="radio" name="emosional" value="Cukup"> Cukup</label>
+                    <label><input type="radio" name="emosional" value="Kurang"> Kurang</label>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
             <!-- Tambahkan pertanyaan lainnya sesuai kebutuhan -->
 
