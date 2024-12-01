@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminNavController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\QuestionnaireController;
 use Illuminate\Support\Facades\Route;
 
 // Public Routes
@@ -9,9 +10,39 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+// Rute untuk kuisioner, mengarahkan ke halaman identitas
 Route::get('/questionnaire', function () {
-    return view('questionnaire');
-})->middleware(['role:alumni'])->name('questionnaire');
+    return view('questionnaire.identity'); // Mengarahkan ke form identitas
+})->middleware(['role:alumni'])->name('identity');
+
+// Menangani pengiriman status kuisioner
+Route::post('/questionnaire/status', [QuestionnaireController::class, 'storeStatus'])->name('questionnaire.storeStatus');
+
+// Rute untuk halaman kuisioner berdasarkan status
+Route::get('/questionnaire/form-bekerja', function () {
+    return view('questionnaire.form-bekerja');  // Halaman jika status Bekerja
+})->middleware(['role:alumni'])->name('questionnaire.form-bekerja');
+
+Route::get('/questionnaire/form-belum-bekerja', function () {
+    return view('questionnaire.form-belum-bekerja');  // Halaman untuk status Belum memungkinkan bekerja
+})->middleware(['role:alumni'])->name('questionnaire.form-belum-bekerja');
+
+Route::get('/questionnaire/form-wiraswasta', function () {
+    return view('questionnaire.form-wiraswasta');  // Halaman untuk status Wiraswasta
+})->middleware(['role:alumni'])->name('questionnaire.form-wiraswasta');
+
+Route::get('/questionnaire/form-melanjutkan-pendidikan', function () {
+    return view('questionnaire.form-melanjutkan-pendidikan');  // Halaman untuk status Melanjutkan Pendidikan
+})->middleware(['role:alumni'])->name('questionnaire.form-melanjutkan-pendidikan');
+
+Route::get('/questionnaire/form-mencari-kerja', function () {
+    return view('questionnaire.form-mencari-kerja');  // Halaman untuk status Mencari Kerja
+})->middleware(['role:alumni'])->name('questionnaire.form-mencari-kerja');
+
+// // Rute default jika status tidak dikenali
+// Route::get('/questionnaire/default', function () {
+//     return view('questionnaire.default');  // Halaman default jika status tidak dikenali
+// })->name('questionnaire.default');
 
 Route::get('/usersurvey', function () {
     return view('usersurvey');
