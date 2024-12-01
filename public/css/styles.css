@@ -490,27 +490,7 @@ nav .container {
     color: #555;
 }
 
-/* Bagian About */
-.about-section {
-    padding: 60px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.about-section h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.about-section p {
-    font-size: 18px;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
+/* Bagian Ajakan */
 /* Bagian Ajakan */
 .cta-section {
     background: var(--secondary-color);
@@ -519,14 +499,27 @@ nav .container {
     text-align: center;
 }
 
-.cta-section h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
+.cta-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menyelaraskan elemen secara horizontal */
+    justify-content: center;
+    gap: 20px;
 }
 
+.cta-section h3 {
+    font-size: 32px;
+    margin-bottom: 0; /* Mengurangi jarak bawah pada judul */
+}
+
+/* Tombol */
 .cta-section .btn {
     background-color: var(--accent-color);
     color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .cta-section .btn:hover {

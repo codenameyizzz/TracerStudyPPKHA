@@ -121,16 +121,6 @@
 </section>
 
 
-
-
-<!-- Bagian About -->
-<section class="about-section" id="about">
-    <div class="container">
-        <h3>Tentang Tracer Study</h3>
-        <p>Tracer Study adalah survei yang dilakukan kepada alumni untuk mengetahui situasi kerja dan penggunaan kompetensi yang diperoleh selama kuliah. Hasil dari tracer study digunakan untuk evaluasi dan pengembangan kurikulum, serta peningkatan kualitas pendidikan di universitas.</p>
-    </div>
-</section>
-
 <!-- Bagian Ajakan -->
 <section class="cta-section">
     <div class="container">
