@@ -32,6 +32,7 @@ body {
     font-size: 16px;
     border-radius: 50px;
     transition: transform 0.3s, background-color 0.3s;
+    float: left;
 }
 
 .btn:hover {
@@ -88,24 +89,34 @@ nav .container {
 
 /* Gaya untuk Tombol Sign In */
 .nav-links .sign-in-btn {
-    background-color: var(--secondary-color); /* Warna biru sedang */
-    color: #fff; /* Teks putih */
-    padding: 8px 20px; /* Padding */
-    border-radius: 30px; /* Sudut melengkung */
-    font-weight: 600; /* Berat font */
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links .sign-in-btn:hover {
-    background-color: var(--primary-color); /* Warna saat hover */
-    transform: translateY(-2px); /* Efek mengangkat */
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 /* Bagian Hero */
 .hero {
-    background-color: #fff;
-    padding: 100px 0;
+    background-image: url("/image/Frame 20.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .hero .container {
@@ -121,22 +132,28 @@ nav .container {
 
 .hero h2 {
     font-size: 3rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
+    margin-bottom: 19px;
+    color: var(--accent-color);
+    text-align: left; /* Menambahkan perataan kiri */
 }
 
 .hero p {
     font-size: 1rem;
     line-height: 1.6;
+    text-align: left; /* Menambahkan perataan kiri */
 }
 
 .hero-image img {
-    width: 60%;
-    max-width: 400px;
-    height: auto;
+    width: 95%;
+    max-width: 600px;
+    height: 95%;
     display: block;
     margin: 0 auto;
+    border-radius: 50%;
     animation: fadeInRight 1s ease-in-out;
+    transform: translateX(10%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
 }
 
 .scroll-down {
@@ -193,19 +210,19 @@ nav .container {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-top: 5px solid #fbbf24;
+    border-top: 5px solid var(--accent-color) 4;
 }
 
 .info-item h4 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #0e8aa9;
+    color: #1e3a8a;
 }
 
 .info-item p {
     font-size: 16px;
-    color: #555;
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -214,9 +231,67 @@ nav .container {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Tarcer Study */
 .tracer-study-section {
     padding: 60px 20px;
-    background-color: #fbbf24;
+    background-image: url("public/image/Frame 21.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Mulai dengan opacity 0 */
+    animation: fadeInUp 2s ease-out forwards; /* Durasi lebih cepat */
+    background-image: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* Animasi Fade-In dan Slide-Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Mulai dari bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Posisi akhir */
+    }
+}
+
+/* Animasi untuk judul */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards; /* Cepat muncul */
+}
+
+/* Animasi untuk teks */
+.text-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #000000;
+    text-align: justify;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 0.3s forwards; /* Sedikit delay */
+}
+
+/* Animasi untuk paragraf dalam .text-content */
+.text-content p {
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 0.6s forwards; /* Delay bertahap */
+}
+
+/* Responsif: Untuk perangkat dengan layar lebih kecil */
+@media (max-width: 768px) {
+    .tracer-study-section .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tracer-study-section .col-md-6 {
+        margin-bottom: 20px;
+    }
 }
 
 .container {
@@ -232,30 +307,19 @@ nav .container {
 }
 
 .section-title .highlight {
-    color: #0e8aa9;
+    color: var(--primary-color);
 }
 
 .text-content {
     font-size: 18px;
     line-height: 1.8;
-    color: #555;
+    color: #000000;
     text-align: justify;
     margin-top: 20px;
 }
 
 .text-content p {
     margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    .tracer-study-section .row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .tracer-study-section .col-md-6 {
-        margin-bottom: 20px;
-    }
 }
 
 /* Manfaat dan Tujuan */
@@ -286,8 +350,10 @@ nav .container {
 /* Gambar di sebelah kanan */
 .left-image {
     flex: 1;
-    max-width: 400px;
-    height: auto;
+    max-width: 1000px; /* Perbesar ukuran gambar */
+    height: 800;
+    margin-top: 40px;
+    width: 100%;
 }
 
 .left-image img {
@@ -298,7 +364,7 @@ nav .container {
 }
 
 .left-image img:hover {
-    transform: scale(1.05); /* Zoom in saat hover */
+    transform: scale(1.1) translateY(5px); /* Perbesar zoom saat hover */
 }
 
 /* Kolom teks */
@@ -339,7 +405,7 @@ nav .container {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background-color: #e3f2fd; /* Warna background ikon */
+    background-color: #fbfdff; /* Warna background ikon */
     border-radius: 50%; /* Bentuk lingkaran */
 }
 
@@ -363,112 +429,65 @@ nav .container {
     color: #555;
 }
 
-/* Bagian Survey */
-/* Container Utama */
-.survey-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    display: flex;
-    align-items: center;
-    gap: 50px; /* Tambahkan jarak lebih besar */
-    background-color: #002366; /* Warna biru */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Kolom Gambar */
-.survey-section .left-image {
-    flex: 1; /* Proporsi agar ukuran sama dengan teks */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.survey-section .left-image img {
-    width: 100%; /* Gambar memenuhi kolom */
-    max-width: 450px; /* Perbesar ukuran maksimum gambar */
-    max-height: 450px; /* Perbesar tinggi maksimum */
-    border-radius: 10px;
-    object-fit: cover; /* Gambar tetap proporsional */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Kolom Teks */
-.survey-section .text-content {
-    flex: 1; /* Proporsi agar ukuran sama dengan gambar */
-    color: #ffffff;
-    padding-left: 20px; /* Geser teks ke kanan */
-}
-
-.survey-section .text-content h3 {
-    font-size: 32px;
-    color: #fbbf24; /* Warna kuning */
-    margin-bottom: 20px;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.survey-section .text-content p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Kotak Kuning */
-.survey-section .highlight-box {
-    background-color: #fbbf24; /* Warna kuning */
-    padding: 20px;
-    border-radius: 8px;
-    color: #002366;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 /* Bagian Informasi */
-.info-section {
-    padding: 60px 0;
-    background-color: var(--bg-color);
+.container {
     text-align: center;
 }
 
-.info-section h3 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: var(--primary-color);
-}
-
 .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .info-item {
-    background-color: #fff;
-    padding: 30px 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    border-top: 5px solid var(#fbbf24);
-    transition: transform 0.3s;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.info-item:hover {
-    transform: translateY(-10px);
+/* Gaya untuk setiap kartu */
+.info-item {
+    background: #fff; /* Warna putih untuk kartu */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-.info-item i {
-    font-size: 40px;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
+/* Garis kuning di atas kartu */
+.info-item .card-header {
+    background: #ffd700; /* Warna kuning */
+    height: 5px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Pastikan tetap terlihat */
+}
+
+.info-item .icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
 }
 
 .info-item h4 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    margin: 10px 0;
+    font-size: 1.5em;
 }
 
 .info-item p {
-    font-size: 16px;
-    color: #666;
+    font-size: 1em;
+    color: #555;
 }
 
 /* Bagian About */
@@ -847,112 +866,161 @@ select:focus {
 }
 
 /* Untuk NavBar user role status */
-/* Dropdown Menu */
-.nav-links .dropdown {
-    position: relative;
-    display: inline-block;
+/* Navigasi */
+nav {
+    background-color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.nav-links .dropdown .dropdown-toggle {
-    background-color: transparent; /* Menghilangkan background default */
-    border: none;
-    color: var(--text-color); /* Sesuaikan warna teks dengan warna default */
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+/* Navbar links dan dropdown */
+.nav-links {
+    list-style: none;
+    display: flex; /* Menyusun item navbar secara horizontal */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 30px; /* Menambahkan jarak antar item navbar */
+    display: flex; /* Pastikan setiap item di dalam navbar juga horizontal */
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
     font-weight: 600;
-    padding: 8px 20px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Dropdown Alumni */
+/* Memastikan dropdown dan profil sejajar secara horizontal */
+.nav-links .dropdown {
+    position: relative;
+    display: inline-flex; /* Menggunakan inline-flex agar elemen berada dalam satu baris */
+    align-items: center; /* Menjaga item sejajar vertikal */
+    margin-left: 20px; /* Memberikan jarak antar item navbar */
+}
+
+/* Tombol dropdown alumni (Nama Alumni) */
+.nav-links .dropdown .dropdown-toggle {
+    background-color: transparent;
+    border: 1px solid #e0e0e0; /* Border abu-abu tipis */
+    color: var(--text-color); /* Warna teks standar */
+    font-weight: 600;
+    padding: 10px 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 30px; /* Sudut melengkung sesuai dengan tombol Sign In */
-    transition: color 0.3s, transform 0.3s ease;
+    justify-content: center; /* Menjaga teks dan ikon sejajar horizontal */
+    border-radius: 30px; /* Sudut melengkung agar konsisten dengan desain */
+    transition: color 0.3s, transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Hover efek untuk tombol dropdown alumni */
 .nav-links .dropdown .dropdown-toggle:hover {
-    color: var(--secondary-color); /* Warna saat hover pada nama user */
-    transform: translateY(-2px); /* Efek mengangkat */
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+    background-color: #f7f7f7;
 }
 
-/* Border untuk dropdown toggle (Nama Alumni) */
-.nav-links .dropdown .dropdown-toggle {
-    border: 1px solid #e0e0e0; /* Border abu-abu tipis untuk membedakan */
-    border-radius: 30px; /* Sudut melengkung untuk kesan yang lebih halus */
-    padding: 10px 20px;
-}
-
-/* Dropdown Menu */
+/* Dropdown menu (muncul di bawah tombol dropdown alumni) */
 .nav-links .dropdown-menu {
     position: absolute;
     right: 0;
     top: 100%;
-    min-width: 200px;
+    min-width: 220px; /* Menyesuaikan dengan konten dropdown */
     padding: 10px 0;
     margin: 0;
-    background-color: #fff; /* Background putih */
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-    border: 1px solid #e0e0e0; /* Border tipis agar terlihat lebih rapi */
-    display: none; /* Sembunyikan dropdown saat tidak aktif */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Efek bayangan dropdown */
+    border: 1px solid #e0e0e0; /* Border tipis */
+    display: none; /* Menyembunyikan dropdown saat tidak aktif */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px); /* Efek transisi dropdown muncul */
 }
 
+/* Menampilkan dropdown saat hover */
 .nav-links .dropdown:hover .dropdown-menu {
     display: block;
     opacity: 1;
     visibility: visible;
+    transform: translateY(0); /* Dropdown muncul ke posisi aslinya */
 }
 
-/* Item dalam dropdown */
+/* Gaya untuk item dalam dropdown */
 .nav-links .dropdown-menu .dropdown-item {
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, padding 0.3s ease;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between; /* Menjaga kesejajaran antara nama dan email */
+    align-items: center; /* Menjaga teks dan ikon berada di tengah vertikal */
+    justify-content: space-between; /* Menyelaraskan teks dan ikon dalam item dropdown */
+    font-size: 14px;
+    line-height: 1.5;
 }
 
+/* Hover efek untuk item dropdown */
 .nav-links .dropdown-menu .dropdown-item:hover {
-    background-color: var(--primary-color); /* Warna saat hover */
-    color: #fff; /* Teks menjadi putih saat hover */
+    background-color: var(--primary-color);
+    color: #fff;
+    padding-left: 30px;
 }
 
-/* Tombol Logout */
+/* Ikon dalam item dropdown */
+.nav-links .dropdown-menu .dropdown-item i {
+    font-size: 1.2em;
+    margin-right: 10px; /* Memberikan jarak antara ikon dan teks */
+}
+
+/* Tombol logout dalam dropdown */
 .nav-links .dropdown .dropdown-item button {
-    background-color: transparent; /* Tombol logout transparan */
+    background-color: transparent;
     border: none;
     color: var(--text-color);
     font-weight: 600;
     width: 100%;
     text-align: left;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between; /* Menjaga kesejajaran antara logout button */
-}
-
-.nav-links .dropdown .dropdown-item button:hover {
-    background-color: var(--primary-color); /* Warna saat hover */
-    color: #fff; /* Teks menjadi putih saat hover */
-}
-
-/* Menyelaraskan Dropdown dengan Elemen Lain */
-.nav-links .dropdown-menu .dropdown-item a {
-    text-decoration: none;
-    color: inherit; /* Tidak ada underline pada link */
-    font-weight: 600;
-}
-
-/* Styling untuk dropdown item yang lebih jelas */
-.nav-links .dropdown-menu .dropdown-item {
+    align-items: center;
+    justify-content: flex-start;
     font-size: 14px;
-    line-height: 1.5;
 }
 
-.nav-links .dropdown-menu .dropdown-item i {
-    font-size: 1.2em; /* Mengatur ukuran ikon jika ada */
+/* Hover efek untuk tombol logout */
+.nav-links .dropdown .dropdown-item button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
 }

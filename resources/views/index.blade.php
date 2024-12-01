@@ -12,7 +12,7 @@
             <a href="{{ url('/questionnaire') }}" class="btn">Mulai Sekarang</a>
         </div>
         <div class="hero-image">
-            <img src="{{ asset('image/hero-1.png') }}" alt="Ilustrasi Tracer Study">
+            <img src="{{ asset('image/wisuda.jpg') }}" alt="Ilustrasi Tracer Study">
         </div>
     </div>
     <div class="scroll-down">
@@ -20,22 +20,18 @@
     </div>
 </header>
 
-
 <!-- Bagian Tracer Study -->
 <section class="tracer-study-section">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h2 class="section-title">
+        <h2 class="section-title fade-in">
           Apa itu <span class="highlight">Tracer Study?</span>
         </h2>
       </div>
-      <div class="col-md-12 text-content">
+      <div class="col-md-12 text-content fade-in">
         <p>
-          Tracer Study merupakan salah satu metode yang digunakan oleh beberapa perguruan tinggi, khususnya di Indonesia, untuk memperoleh umpan balik dari alumni. Umpan balik yang diperoleh ini diperlukan oleh perguruan tinggi untuk perbaikan serta pengembangan kualitas dan sistem pendidikan.
-        </p>
-        <p>
-          Umpan balik ini juga bermanfaat untuk memetakan dunia usaha dan industri agar jeda antara kompetensi yang diperoleh alumni saat kuliah dengan tuntutan dunia kerja dapat diperkecil.
+          Tracer Study di Institut Teknologi Del berperan penting dalam mempererat hubungan antara institusi dan alumni. Survei ini memberikan wawasan tentang perjalanan karir alumni serta harapan mereka terhadap pengembangan pendidikan. Selain meningkatkan kualitas pendidikan, Tracer Study juga memperkuat jaringan alumni yang saling mendukung dalam karir dan kontribusi terhadap kemajuan kampus, serta membuka peluang bagi alumni untuk berpartisipasi dalam pengembangan almamater.
         </p>
       </div>
     </div>
@@ -92,60 +88,40 @@
     </div>
 </section>
 
-<!-- Bagian Survei -->
-<section class="survey-section">
-    <div class="container">
-        <!-- Kolom Gambar -->
-        <div class="left-image">
-            <img src="{{ asset('image/survei.jpg') }}" alt="Survey Illustration">
-        </div>
-        <!-- Kolom Teks -->
-        <div class="text-content">
-            <h3>SURVEY PENILAIAN PENGGUNA LULUSAN</h3>
-            <p>Definisi dan Responden</p>
-            <p>
-                Survei Penilaian Lulusan adalah survei yang ditujukan kepada seluruh pengguna lulusan Institut Teknologi Del. Survei ini bertujuan untuk mengevaluasi kualitas lulusan Institut Teknologi Del dari sudut pandang pengguna, memastikan apakah lulusan yang dihasilkan telah memenuhi ekspektasi pengguna dan kebutuhan dunia kerja.
-            </p>
-            <div class="highlight-box">
-                <h4>Ditujukan Bagi Mitra Institut Teknologi Del</h4>
-                <p>
-                    Berikan evaluasi dan masukan terkait lulusan Institut Teknologi Del yang bekerja di tempat Anda atau bermitra dengan Anda. Umpan balik Anda akan membantu Institut Teknologi Del dalam mencetak lulusan yang lebih berkualitas dan sesuai dengan kebutuhan dunia kerja di masa depan.
-                </p>
-                <a href="{{ url('/kuisioner') }}" class="btn">Isi Kuisioner →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 <!-- Bagian Informasi -->
-<section class="info-section" id="info">
+<section class="info-section fade-in-info" id="info">
     <div class="container">
-        <h3>Mengapa Tracer Study Penting?</h3>
+        <h3 class="section-title">Metode dan Konsep Tracer Study</h3>
+        <p class="intro-paragraph">
+            Sistem pelacakan alumni di Institut Teknologi Del disebut Tracer Study. Sistem ini dikelola oleh PPKHA IT Del dan bertujuan untuk memantau perkembangan karier alumni. Proses tracer study di IT Del membantu mengumpulkan informasi dari alumni untuk meningkatkan kualitas pendidikan dan menjaga hubungan yang baik antara kampus dan lulusan.
+        </p>
+
         <div class="info-grid">
+            <!-- Card 1: Program Tracer Study -->
             <div class="info-item">
-                <i class="fas fa-graduation-cap"></i>
-                <h4>Peningkatan Kurikulum</h4>
-                <p>Data alumni membantu kami menyempurnakan kurikulum agar sesuai dengan kebutuhan industri.</p>
+            <div class="card-header"></div>
+                <img src="image/megaphone.png" alt="Program Tracer Study" class="icon">
+                <p>Tim PPKHA mengirimkan email broadcast dan WA broadcast kepada lulusan untuk berpartisipasi dalam tracer study online.</p>
             </div>
+            <!-- Card 2: Metode Tracer Study -->
             <div class="info-item">
-                <i class="fas fa-briefcase"></i>
-                <h4>Peluang Karir</h4>
-                <p>Membantu mahasiswa dan alumni mendapatkan informasi terkini tentang peluang karir.</p>
+            <div class="card-header"></div>
+                <img src="image/chat.png" alt="Metode Tracer Study" class="icon">
+                <p>Pengelola prodi menghubungi lulusan untuk memberikan jawaban atas pertanyaan tracer study.</p>
             </div>
+            <!-- Card 3: Sistem Pelacakan Alumni -->
             <div class="info-item">
-                <i class="fas fa-chart-line"></i>
-                <h4>Evaluasi Kinerja</h4>
-                <p>Menilai efektivitas program pendidikan yang telah dijalankan.</p>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-network-wired"></i>
-                <h4>Jejaring Alumni</h4>
-                <p>Membangun jaringan yang kuat antara alumni untuk saling berbagi dan mendukung.</p>
+            <div class="card-header"></div>
+                <img src="image/bureaucracy.png" alt="Sistem Pelacakan Alumni" class="icon">
+                <p>Himpunan mahasiswa mengirim broadcast message melalui media populer seperti Line, Instagram, dan WhatsApp.</p>
             </div>
         </div>
     </div>
 </section>
+
+
+
 
 <!-- Bagian About -->
 <section class="about-section" id="about">
