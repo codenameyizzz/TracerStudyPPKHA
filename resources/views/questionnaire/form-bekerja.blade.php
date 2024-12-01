@@ -356,78 +356,95 @@
     </div>
 </div>
 
-  <div class="question-card">
-  <h3>Pada saat lulus, pada tingkat mana kompetensi di bawah ini Anda kuasai?</h3>
+ <div class="question-card" style="display: flex; gap: 20px;">
+  <!-- Kolom Kiri -->
+  <div style="flex: 1;">
+    <h3>Pada saat lulus, pada tingkat mana kompetensi di bawah ini Anda kuasai?</h3>
+    @foreach (['Etika', 'Keahlian Berdasarkan Bidang Ilmu', 'Bahasa Inggris', 'Penggunaan Teknologi Informasi', 'Komunikasi', 'Kerjasama Tim', 'Pengelolaan Waktu'] as $kompetensi)
+    <div style="margin-bottom: 15px;">
+      <label style="font-weight: bold;">{{ $kompetensi }}</label>
+      <div style="display: flex; gap: 10px; margin-top: 5px;">
+        @for ($i = 1; $i <= 5; $i++)
+        <label style="font-weight: normal;">
+          <input type="radio" name="kompetensi_lulus_{{ strtolower(str_replace(' ', '_', $kompetensi)) }}" value="{{ $i }}" required> {{ $i }}
+        </label>
+        @endfor
+      </div>
+    </div>
+    @endforeach
+  </div>
 
-  @foreach (['Etika', 'Keahlian Berdasarkan Bidang Ilmu', 'Bahasa Inggris', 'Penggunaan Teknologi Informasi', 'Komunikasi', 'Kerjasama Tim', 'Pengelolaan Waktu'] as $kompetensi)
-  <div>
-    <label>{{ $kompetensi }}</label>
-    <select name="kompetensi_{{ strtolower(str_replace(' ', '_', $kompetensi)) }}" required>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
+  <!-- Kolom Kanan -->
+  <div style="flex: 1;">
+    <h3>Pada saat ini, pada tingkat mana kompetensi di bawah ini diperlukan dalam pekerjaan? (Skala 1-5)</h3>
+    @foreach (['Etika', 'Keahlian Berdasarkan Bidang Ilmu', 'Bahasa Inggris', 'Penggunaan Teknologi Informasi', 'Komunikasi', 'Kerjasama Tim', 'Pengembangan'] as $kompetensi)
+    <div style="margin-bottom: 15px;">
+      <label style="font-weight: bold;">{{ $kompetensi }}</label>
+      <div style="display: flex; gap: 10px; margin-top: 5px;">
+        @for ($i = 1; $i <= 5; $i++)
+        <label style="font-weight: normal;">
+          <input type="radio" name="kompetensi_pekerjaan_{{ strtolower(str_replace(' ', '_', $kompetensi)) }}" value="{{ $i }}" required> {{ $i }}
+        </label>
+        @endfor
+      </div>
+    </div>
+    @endforeach
+  </div>
+</div>
+
+
+ <div class="question-card">
+  <h3>Menurut Anda seberapa besar penekanan pada metode pembelajaran di bawah ini dilaksanakan di program studi Anda?</h3>
+  @foreach (['Perkuliahan', 'Demonstrasi', 'Partisipasi dalam Proyek Riset', 'Magang', 'Praktikum', 'Kerja Lapangan', 'Diskusi'] as $metode)
+  <div style="margin-bottom: 15px;">
+    <label style="font-weight: bold;">{{ $metode }}</label>
+    <div style="display: flex; gap: 15px; margin-top: 5px;">
+      @foreach (['Sangat Besar', 'Besar', 'Cukup Besar', 'Kurang Besar', 'Tidak Sama Sekali'] as $opsi)
+      <label style="font-weight: normal;">
+        <input type="radio" name="metode_{{ strtolower(str_replace(' ', '_', $metode)) }}" value="{{ $opsi }}" required> {{ $opsi }}
+      </label>
+      @endforeach
+    </div>
   </div>
   @endforeach
 </div>
 
-      <div class="question-card">
-        <h3>Pada saat ini, pada tingkat mana kompetensi di bawah ini diperlukan dalam pekerjaan? (Skala 1-5)</h3>
-        @foreach (['Etika', 'Keahlian Berdasarkan Bidang Ilmu', 'Bahasa Inggris', 'Penggunaan Teknologi Informasi', 'Komunikasi', 'Kerjasama Tim', 'Pengembangan'] as $kompetensi)
-        <div>
-          <label>{{ $kompetensi }}</label>
-          <select name="kompetensi_{{ strtolower(str_replace(' ', '_', $kompetensi)) }}" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        @endforeach
-      </div>
+     <!-- Pertanyaan 13 -->
+<div class="question-card">
+  <h3>Kapan Anda mulai mencari pekerjaan? (Mohon pekerjaan sambilan tidak dimasukkan)</h3>
+  
+  <div>
+    <label>
+      <input type="radio" name="waktu_cari_pekerjaan" value="Kira-kira bulan sebelum lulus" required>
+      Kira-kira <select name="bulan_sebelum_lulus" style="width: 80px;" required>
+        <option value="" disabled selected>Pilih</option>
+        @for ($i = 1; $i <= 12; $i++)
+          <option value="{{ $i }}">{{ $i }}</option>
+        @endfor
+      </select> bulan sebelum lulus
+    </label>
+  </div>
 
-      <!-- Pertanyaan 12 -->
-      <div class="question-card">
-        <h3>Menurut Anda seberapa besar penekanan pada metode pembelajaran di bawah ini dilaksanakan di program studi Anda?</h3>
-        @foreach (['Perkuliahan', 'Demonstrasi', 'Partisipasi dalam Proyek Riset', 'Magang', 'Praktikum', 'Kerja Lapangan', 'Diskusi'] as $metode)
-        <div>
-          <label>{{ $metode }}</label>
-          <select name="metode_{{ strtolower(str_replace(' ', '_', $metode)) }}" required>
-            <option value="Sangat Besar">Sangat Besar</option>
-            <option value="Besar">Besar</option>
-            <option value="Cukup Besar">Cukup Besar</option>
-            <option value="Kurang Besar">Kurang Besar</option>
-            <option value="Tidak Sama Sekali">Tidak Sama Sekali</option>
-          </select>
-        </div>
-        @endforeach
-      </div>
+  <div>
+    <label>
+      <input type="radio" name="waktu_cari_pekerjaan" value="Kira-kira bulan sesudah lulus" required>
+      Kira-kira <select name="bulan_sesudah_lulus" style="width: 80px;" required>
+        <option value="" disabled selected>Pilih</option>
+        @for ($i = 1; $i <= 12; $i++)
+          <option value="{{ $i }}">{{ $i }}</option>
+        @endfor
+      </select> bulan sesudah lulus
+    </label>
+  </div>
 
-      <!-- Pertanyaan 13 -->
-      <div class="question-card">
-        <h3>Kapan Anda mulai mencari pekerjaan? (Mohon pekerjaan sambilan tidak dimasukkan)</h3>
-        <div>
-          <label>
-            <input type="radio" name="waktu_cari_pekerjaan" value="Kira-kira bulan sebelum lulus" required>
-            Kira-kira <input type="number" name="bulan_sebelum_lulus" style="width: 60px;" min="0"> bulan sebelum lulus
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="radio" name="waktu_cari_pekerjaan" value="Kira-kira bulan sesudah lulus" required>
-            Kira-kira <input type="number" name="bulan_sesudah_lulus" style="width: 60px;" min="0"> bulan sesudah lulus
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="radio" name="waktu_cari_pekerjaan" value="Saya tidak mencari kerja" required>
-            Saya tidak mencari kerja
-          </label>
-        </div>
-      </div>
+  <div>
+    <label>
+      <input type="radio" name="waktu_cari_pekerjaan" value="Saya tidak mencari kerja" required>
+      Saya tidak mencari kerja
+    </label>
+  </div>
+</div>
+
 
      <!-- Pertanyaan 14 -->
 <div class="question-card">
