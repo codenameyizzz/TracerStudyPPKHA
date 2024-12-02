@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    /**
-     * Show the login form.
-     */
     public function getLogin(Request $request)
     {
         if (Auth::check()) {
@@ -25,10 +22,7 @@ class AuthController extends Controller
         }
         return view("auth.login");
     }
-
-    /**
-     * Handle login request.
-     */
+    
     public function postLogin(Request $request)
     {
         // Validasi data login

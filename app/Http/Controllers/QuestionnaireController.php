@@ -31,8 +31,5 @@ class QuestionnaireController extends Controller
         if ($status == 'Tidak kerja tetapi sedang mencari kerja') {
             return redirect()->route('questionnaire.form-mencari-kerja');  // Halaman untuk status ini
         }
-
-        // // Jika status tidak dikenali, redirect ke halaman default
-        // return redirect()->route('questionnaire.default');
     }
 }

@@ -645,12 +645,14 @@ form {
     margin-top: 0;
     color: var(--secondary-color);
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .question-card label {
     display: block;
     margin-bottom: 10px;
     font-weight: 600;
+    text-align: left;
 }
 
 .question-card input[type="text"],

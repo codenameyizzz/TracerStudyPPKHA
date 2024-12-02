@@ -13,8 +13,13 @@
                 <h3>Identitas</h3>
                 <label for="nim">NIM</label>
                 <input type="text" id="nim" name="nim" required>
-                <label for="email">Tahun Lulus</label>
-                <input type="number" id="number" name="number" required>
+
+                <label for="tahun_lulus">Tahun Lulus</label>
+                <select id="tahun_lulus" name="tahun_lulus" required>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                </select>
 
                 <label for="name">Nama Lengkap</label>
                 <input type="text" id="name" name="name" required>
@@ -27,14 +32,25 @@
 
 
                 <label for="status">Status Anda Saat Ini</label>
-                <select id="status" name="status" required>
-                    <option value="Bekerja">Bekerja (full-time / part-time)</option>
-                    <option value="Belum memungkinkan bekerja">Belum memungkinkan bekerja</option>
-                    <option value="Wiraswasta">Wiraswasta</option>
-                    <option value="Melanjutkan Pendidikan">Melanjutkan Pendidikan</option>
-                    <option value="Tidak kerja tetapi sedang mencari kerja">Tidak kerja tetapi sedang mencari kerja
-                    </option>
-                </select>
+                <div class="radio-group">
+                    <input type="radio" id="status_bekerja" name="status" value="Bekerja" required>
+                    <label for="status_bekerja">Bekerja (full-time / part-time)</label>
+
+                    <input type="radio" id="status_belum_bekerja" name="status" value="Belum memungkinkan bekerja"
+                        required>
+                    <label for="status_belum_bekerja">Belum memungkinkan bekerja</label>
+
+                    <input type="radio" id="status_wiraswasta" name="status" value="Wiraswasta" required>
+                    <label for="status_wiraswasta">Wiraswasta</label>
+
+                    <input type="radio" id="status_melanjutkan_pendidikan" name="status" value="Melanjutkan Pendidikan"
+                        required>
+                    <label for="status_melanjutkan_pendidikan">Melanjutkan Pendidikan</label>
+
+                    <input type="radio" id="status_mencari_kerja" name="status"
+                        value="Tidak kerja tetapi sedang mencari kerja" required>
+                    <label for="status_mencari_kerja">Tidak kerja tetapi sedang mencari kerja</label>
+                </div>
             </div>
 
             <!-- Tombol Kirim -->
