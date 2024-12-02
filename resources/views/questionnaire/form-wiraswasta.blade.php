@@ -39,18 +39,30 @@ input[type="radio"]:checked {
             @csrf
 
             <!-- Pertanyaan Wiraswasta -->
-            <div class="question-card" id="wiraswasta_section" style="display: none;">
-                <h3> Dalam berapa bulan setelah lulus Anda memulai wiraswasta?</h3>
-                <input type="number" name="bulan_setelah_lulus" required>
-                
-                <h3>Bila berwiraswasta, apa posisi/jabatan Anda saat ini?</h3>
-                <select name="posisi_wiraswasta" required>
-                    <option value="Founder">Founder</option>
-                    <option value="Co-Founder">Co-Founder</option>
-                    <option value="Staff">Staff</option>
-                    <option value="Freelance/Kerja Lepas">Freelance/Kerja Lepas</option>
-                </select>
-            </div>
+            <div class="question-card">
+        <h3>Dalam berapa bulan Anda mendapatkan pekerjaan pertama?</h3>
+        <select name="waktu_mendapatkan_pekerjaan" required>
+          <option value="<1"><1</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+      </div>
+      <div class="question-card">
+    <h3>Berapa rata-rata pendapatan Anda per bulan? (take home pay)</h3>
+    <div class="input-container">
+        <input type="text" name="pendapatan" id="pendapatan" required oninput="formatCurrency(this)">
+    </div>
+</div>
 
             <!-- Pertanyaan Sumber Dana -->
             <div class="question-card">
